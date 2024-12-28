@@ -1,18 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
 import { useMessages } from 'utils/useMessages'
 
 const MessagesList = () => {
   const { messages, isLoadingAnswer } = useMessages()
 
   // Create a ref for the messages container
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Scroll to the bottom whenever messages change
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages]); // This effect runs whenever messages change
+  }, [messages]) // This effect runs whenever messages change
 
   return (
     <div className="mx-auto max-w-3xl pt-8">
